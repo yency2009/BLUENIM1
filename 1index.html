@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bluenim</title>
+
+    <style>
+        @font-face {
+            font-family: "Kolbano";
+            src: url("../fonts/Kolbano-Regular.woff2") format("woff2");
+        }
+
+        @font-face {
+            font-family: "Creato";
+            src: url("../fonts/CreatoDisplay-ExtraBold.woff2") format("woff2");
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: "Bookman Old Style", Bookman, serif;
+            color: #333;
+            background: linear-gradient(
+                135deg,
+                #CE9B9A,
+                #e5c4c4 20%,
+                #fff 50%,
+                #dce8ef 75%,
+                #99B7CC
+            );
+            background-attachment: fixed;
+        }
+
+        /* ENCABEZADO */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #fff;
+            border-bottom: 3px solid #99B7CC;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 40px;
+        }
+
+        .logo {
+            font-family: "Kolbano", sans-serif;
+            color: #26556D;
+            font-size: 27px;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 40px;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #26556D;
+        }
+
+        /* CONTENIDO PRINCIPAL */
+
+        main {
+            flex: 1;
+        }
+
+        .inicio {
+            text-align: center;
+            padding: 50px 20px 20px;
+        }
+
+        .inicio h1,
+        .ubicacion h2 {
+            font-family: "Creato", Arial, sans-serif;
+            color: #26556D;
+        }
+
+        .inicio h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .inicio p {
+            color: #555;
+            font-size: 19px;
+            margin-bottom: 40px;
+        }
+
+        /* GALERÍA */
+
+        .galeria {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .galeria img {
+            width: 260px;
+            height: 260px;
+            object-fit: cover;
+            border: 5px solid #fff;
+            border-radius: 22px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: 0.3s;
+        }
+
+        .galeria img:hover {
+            transform: translateY(-8px) scale(1.04);
+            border-color: #26556D;
+        }
+
+        /* UBICACIÓN */
+
+        .ubicacion {
+            margin: 60px 10px 0;
+            padding: 70px 20px;
+            text-align: center;
+            border: 3px solid #99B7CC;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .ubicacion h2 {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .ubicacion p {
+            color: #555;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .direccion {
+            color: #333 !important;
+        }
+
+        /* BOTÓN */
+
+        .boton-maps {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 14px 30px;
+            background: #99B7CC;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .boton-maps:hover {
+            background: #CE9B9A;
+            transform: translateY(-3px);
+        }
+
+        /* PIE DE PÁGINA */
+
+        footer {
+            margin-top: 60px;
+            padding: 22px;
+            background: #000;
+            color: #fff;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 20px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            nav a {
+                font-size: 17px;
+            }
+
+            .inicio h1 {
+                font-size: 34px;
+            }
+
+            .galeria img {
+                width: 90%;
+                height: auto;
+                max-width: 320px;
+            }
+
+            .ubicacion {
+                margin: 40px 5px 0;
+                padding: 50px 15px;
+            }
+
+            .ubicacion h2 {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 16px;
+            }
+
+            .inicio {
+                padding: 40px 15px 20px;
+            }
+
+            .inicio h1 {
+                font-size: 30px;
+            }
+
+            .inicio p,
+            .ubicacion p {
+                font-size: 17px;
+            }
+
+            .galeria img {
+                width: 100%;
+                max-width: 320px;
+            }
+
+            .ubicacion h2 {
+                font-size: 25px;
+            }
+
+            .boton-maps {
+                padding: 12px 22px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar">
+
+            <div class="logo">BLUENIM</div>
+
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="Producto.html">Producto</a>
+                <a href="Nosotros.html">Sobre Nosotros</a>
+                <a href="Contactanos.html">Contáctanos</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <section class="inicio">
+
+            <h1>Bienvenida a Bluenim</h1>
+
+            <p>
+                Monederos únicos, hechos con estilo y personalidad.
+            </p>
+
+            <div class="galeria">
+
+                <img src="../img/img,10.jpeg" alt="Monedero Bluenim 1">
+                <img src="../img/img.11.jpeg" alt="Monedero Bluenim 2">
+                <img src="../img/img.12.jpeg" alt="Monedero Bluenim 3">
+                <img src="../img/img.13.jpeg" alt="Monedero Bluenim 4">
+
+            </div>
+
+        </section>
+
+        <section class="ubicacion">
+
+            <h2>📍 Nuestra ubicación</h2>
+
+            <p>
+                ¡Ven a conocer nuestros monederos hechos con jean reciclado!
+            </p>
+
+            <p class="direccion">
+                Cra. 1H Bis Este #80 Sur-1 a 80 Sur-11
+            </p>
+
+            <a
+                class="boton-maps"
+                href="https://maps.google.com/?q=Cra.%201h%20Bis%20Este%20%2380%20Sur-1%20a%2080%20Sur-11"
+                target="_blank"
+            >
+                📍 Ver ubicación en Google Maps
+            </a>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Bluenim - Hecho con amor.</p>
+    </footer>
+
+</body>
+
+</html>
+
+
